@@ -7,6 +7,9 @@ const app = express();
 app.use(express.json());
 const port = process.env.PORT || 5000;
 
+app.get("/ping", (req, res) => {
+  res.send("pong!");
+});
 app.post("/", async (req, res) => {
   try {
     const body = req.body;
